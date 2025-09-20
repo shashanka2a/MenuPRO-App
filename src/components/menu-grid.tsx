@@ -51,7 +51,7 @@ export function MenuGrid() {
             Our Featured Menu
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover our chef's carefully crafted dishes made with the finest ingredients
+            Discover our chef&apos;s carefully crafted dishes made with the finest ingredients
           </p>
         </div>
         

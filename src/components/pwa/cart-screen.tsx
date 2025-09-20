@@ -178,7 +178,7 @@ export function CartScreen({ cartItems, onUpdateItem, onBack, onCheckout }: Cart
                 </Button>
               </div>
             )}
-            <p className="text-xs text-gray-500 mt-2">Try "SAVE10" for 10% off</p>
+            <p className="text-xs text-gray-500 mt-2">Try &quot;SAVE10&quot; for 10% off</p>
           </CardContent>
         </Card>
 
