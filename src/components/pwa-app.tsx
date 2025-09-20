@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from "react";
 import { OnboardingScreen } from "./pwa/onboarding-screen";
 import { QRScanScreen } from "./pwa/qr-scan-screen";

@@ -1,3 +1,5 @@
+'use client'
+
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { Smartphone, ShoppingCart, CheckCircle } from "lucide-react";
