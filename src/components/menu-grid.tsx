@@ -1,86 +1,111 @@
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Star } from "lucide-react";
+import { Check, Zap, Shield, BarChart3, Smartphone, CreditCard } from "lucide-react";
 
-const menuItems = [
+const services = [
   {
     id: 1,
-    name: "Truffle Pasta",
-    description: "Hand-made pasta with black truffle, parmesan, and wild mushrooms",
-    price: "$28",
-    rating: 4.9,
-    image: "https://images.unsplash.com/photo-1711539137930-3fa2ae6cec60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZWxpY2lvdXMlMjBwYXN0YSUyMGRpc2h8ZW58MXx8fHwxNzU4Mzc3NTU4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    badge: "Popular"
+    name: "QR Code Ordering System",
+    description: "Customers scan QR codes to access your digital menu and place orders directly from their phones",
+    icon: Smartphone,
+    features: ["Custom QR codes", "Mobile-optimized", "Offline capability"],
+    badge: "Most Popular"
   },
   {
     id: 2,
-    name: "Grilled Salmon",
-    description: "Atlantic salmon with roasted vegetables and lemon herb sauce",
-    price: "$32",
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1758157836016-3f3fbc5bf796?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmlsbGVkJTIwc2FsbW9uJTIwbWVhbHxlbnwxfHx8fDE3NTg0MDMxODJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    badge: "Chef's Choice"
+    name: "Real-time Analytics",
+    description: "Track sales, popular items, and customer behavior with detailed analytics dashboard",
+    icon: BarChart3,
+    features: ["Sales reports", "Customer insights", "Inventory tracking"],
+    badge: "Analytics"
   },
   {
     id: 3,
-    name: "Artisan Pizza",
-    description: "Wood-fired pizza with fresh mozzarella, basil, and San Marzano tomatoes",
-    price: "$24",
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1646257099268-c560a1230dba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpc2FuJTIwcGl6emElMjBzbGljZXxlbnwxfHx8fDE3NTg0MDMxODJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    badge: "New"
+    name: "Payment Processing",
+    description: "Secure payment processing with multiple payment options and no transaction fees",
+    icon: CreditCard,
+    features: ["Multiple payment methods", "Secure transactions", "No fees"],
+    badge: "Secure"
   },
   {
     id: 4,
-    name: "Garden Salad",
-    description: "Fresh mixed greens with seasonal vegetables and house vinaigrette",
-    price: "$18",
-    rating: 4.6,
-    image: "https://images.unsplash.com/photo-1620019989479-d52fcedd99fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcmVzaCUyMHNhbGFkJTIwYm93bHxlbnwxfHx8fDE3NTgzMDAzNjd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    badge: "Healthy"
+    name: "Order Management",
+    description: "Streamline kitchen operations with real-time order tracking and management tools",
+    icon: Zap,
+    features: ["Kitchen display", "Order tracking", "Staff notifications"],
+    badge: "Efficient"
   }
 ];
 
 export function MenuGrid() {
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Featured Menu
+            Our Services & Features
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover our chef&apos;s carefully crafted dishes made with the finest ingredients
+            Everything you need to modernize your restaurant and increase revenue
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {menuItems.map((item) => (
-            <Card key={item.id} className="overflow-hidden hover:shadow-xl transition-shadow group cursor-pointer">
-              <div className="relative">
-                <ImageWithFallback
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <Badge className="absolute top-4 left-4 bg-orange-600 text-white">
-                  {item.badge}
-                </Badge>
-              </div>
-              <CardContent className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold">{item.name}</h3>
-                  <span className="text-2xl font-bold text-orange-600">{item.price}</span>
+          {services.map((service) => (
+            <Card key={service.id} className="overflow-hidden hover:shadow-xl transition-shadow group cursor-pointer bg-white">
+              <CardContent className="p-8">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center">
+                    <service.icon className="w-8 h-8 text-orange-600" />
+                  </div>
+                  <Badge className="bg-orange-600 text-white">
+                    {service.badge}
+                  </Badge>
                 </div>
-                <p className="text-gray-600 mb-4">{item.description}</p>
-                <div className="flex items-center">
-                  <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                  <span className="ml-1 text-sm text-gray-600">{item.rating}</span>
-                </div>
+                <h3 className="text-2xl font-bold mb-3">{service.name}</h3>
+                <p className="text-gray-600 mb-6">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, index) => (
+                    <li key={index} className="flex items-center text-sm text-gray-600">
+                      <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           ))}
+        </div>
+        
+        {/* Pricing Section */}
+        <div className="mt-20 text-center">
+          <div className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto">
+            <h3 className="text-3xl font-bold mb-4">Simple Pricing</h3>
+            <div className="text-6xl font-bold text-orange-600 mb-2">$19</div>
+            <div className="text-xl text-gray-600 mb-6">per month</div>
+            <div className="space-y-3 text-left max-w-md mx-auto">
+              <div className="flex items-center">
+                <Check className="w-5 h-5 text-green-500 mr-3" />
+                <span>No setup fees</span>
+              </div>
+              <div className="flex items-center">
+                <Check className="w-5 h-5 text-green-500 mr-3" />
+                <span>No commission on transactions</span>
+              </div>
+              <div className="flex items-center">
+                <Check className="w-5 h-5 text-green-500 mr-3" />
+                <span>All features included</span>
+              </div>
+              <div className="flex items-center">
+                <Check className="w-5 h-5 text-green-500 mr-3" />
+                <span>24/7 customer support</span>
+              </div>
+              <div className="flex items-center">
+                <Check className="w-5 h-5 text-green-500 mr-3" />
+                <span>Cancel anytime</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

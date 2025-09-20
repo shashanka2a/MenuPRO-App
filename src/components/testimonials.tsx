@@ -5,8 +5,8 @@ const testimonials = [
   {
     id: 1,
     name: "Sarah Johnson",
-    role: "Food Blogger",
-    content: "MenuPRO has completely transformed our dining experience. The digital menu is intuitive and the ordering process is seamless. No more waiting for servers!",
+    role: "Restaurant Owner",
+    content: "MenuPRO has increased our revenue by 30% while reducing operational costs. The $19/month fee is nothing compared to the commission we were paying before!",
     rating: 5,
     avatar: "SJ"
   },
@@ -14,15 +14,15 @@ const testimonials = [
     id: 2,
     name: "Mike Chen",
     role: "Restaurant Manager",
-    content: "Since implementing MenuPRO, our order accuracy has improved by 95% and customer satisfaction is at an all-time high. It's a game-changer for the industry.",
+    content: "Since implementing MenuPRO, our order accuracy has improved by 95% and customer satisfaction is at an all-time high. The analytics help us make better business decisions.",
     rating: 5,
     avatar: "MC"
   },
   {
     id: 3,
     name: "Emma Williams",
-    role: "Regular Customer",
-    content: "I love how I can see detailed photos and ingredients for each dish. As someone with allergies, this gives me peace of mind when ordering.",
+    role: "Restaurant Owner",
+    content: "Finally, a solution that doesn't take a cut of our sales! The flat $19/month fee means we keep 100% of our revenue. It's been a game-changer for our business.",
     rating: 5,
     avatar: "EW"
   }

@@ -23,17 +23,17 @@ export function Hero({ onLaunchApp }: HeroProps) {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Transforming Dining with Digital Menu
+          Digital Menu Platform for Restaurants
         </h1>
         <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto">
-          Experience the future of restaurant ordering with our intuitive digital menu system
+          No commission fees. Just $19/month. Transform your restaurant with our complete digital ordering solution.
         </p>
         <Button 
           onClick={onLaunchApp}
           size="lg" 
           className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 text-xl rounded-full"
         >
-          Order Now
+          Start Free Trial
         </Button>
       </div>
     </section>

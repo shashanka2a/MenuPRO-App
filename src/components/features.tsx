@@ -12,20 +12,20 @@ const features = [
   {
     step: "01",
     icon: Smartphone,
-    title: "Scan QR Code",
-    description: "Simply scan the QR code at your table to access our digital menu instantly"
+    title: "QR Code Ordering",
+    description: "Customers scan QR codes to access your digital menu instantly from their phones"
   },
   {
     step: "02", 
     icon: ShoppingCart,
-    title: "Browse & Select",
-    description: "Explore our delicious offerings with beautiful photos and detailed descriptions"
+    title: "Real-time Order Management",
+    description: "Track orders in real-time, manage inventory, and streamline your kitchen operations"
   },
   {
     step: "03",
     icon: CheckCircle,
-    title: "Review & Confirm",
-    description: "Review your selections, customize as needed, and confirm your order with confidence"
+    title: "No Commission Fees",
+    description: "Keep 100% of your revenue with our flat $19/month subscription - no hidden fees"
   }
 ];
 
@@ -35,10 +35,10 @@ export function Features({ onLaunchApp }: FeaturesProps) {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Simple 3-Step Ordering
+            Complete Restaurant Solution
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Our streamlined process makes dining effortless and enjoyable
+            Everything you need to modernize your restaurant operations and boost revenue
           </p>
         </div>
         
@@ -73,7 +73,7 @@ export function Features({ onLaunchApp }: FeaturesProps) {
             size="lg" 
             className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-full"
           >
-            Start Your Digital Menu Journey
+            Get Started Today
           </Button>
         </div>
       </div>

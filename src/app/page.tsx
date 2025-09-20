@@ -25,7 +25,7 @@ export default function Home() {
         <section id="features">
           <Features onLaunchApp={() => setShowPWA(true)} />
         </section>
-        <section id="menu">
+        <section id="services">
           <MenuGrid />
         </section>
         <section id="testimonials">
