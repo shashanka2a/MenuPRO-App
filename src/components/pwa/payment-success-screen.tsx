@@ -38,9 +38,9 @@ export function PaymentSuccessScreen({ onNewOrder, onBackToLanding }: PaymentSuc
               </div>
               <div className="pt-4 border-t border-gray-200">
                 <div className="bg-orange-50 rounded-lg p-4">
-                  <h3 className="font-semibold text-gray-900 mb-2">What's Next?</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">What&apos;s Next?</h3>
                   <p className="text-sm text-gray-600">
-                    Your order is being prepared by our kitchen team. We'll bring it directly to your table when ready.
+                    Your order is being prepared by our kitchen team. We&apos;ll bring it directly to your table when ready.
                   </p>
                 </div>
               </div>
