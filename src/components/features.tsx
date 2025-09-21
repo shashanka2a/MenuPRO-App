@@ -13,19 +13,22 @@ const features = [
     step: "01",
     icon: Smartphone,
     title: "QR Code Ordering",
-    description: "Customers scan QR codes to access your digital menu instantly from their phones"
+    description: "No more waiting for servers. Customers scan QR codes to access your digital menu instantly from their phones.",
+    painPoint: "Eliminate paper menus forever"
   },
   {
     step: "02", 
     icon: ShoppingCart,
     title: "Real-time Order Management",
-    description: "Track orders in real-time, manage inventory, and streamline your kitchen operations"
+    description: "Cut order errors by 30%. Track orders in real-time, manage inventory, and streamline your kitchen operations.",
+    painPoint: "Reduce order mistakes & kitchen chaos"
   },
   {
     step: "03",
     icon: CheckCircle,
     title: "No Commission Fees",
-    description: "Keep 100% of your revenue with our flat $19/month subscription - no hidden fees"
+    description: "Keep 100% of your revenue. Our flat $19/month subscription means no hidden fees eating into your profits.",
+    painPoint: "Stop losing money to commission fees"
   }
 ];
 
@@ -54,7 +57,8 @@ export function Features({ onLaunchApp }: FeaturesProps) {
                     {feature.step}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
+                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                <p className="text-sm text-orange-600 font-semibold mb-3">{feature.painPoint}</p>
                 <p className="text-gray-600 mb-6">{feature.description}</p>
                 <Button 
                   onClick={onLaunchApp}

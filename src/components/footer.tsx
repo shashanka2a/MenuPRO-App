@@ -1,14 +1,33 @@
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Shield, Award, Users } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12 px-4">
       <div className="max-w-6xl mx-auto">
+        {/* Social Proof Section */}
+        <div className="text-center mb-12 pb-8 border-b border-gray-800">
+          <h3 className="text-2xl font-bold mb-6">Trusted by 200+ Restaurants</h3>
+          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+            <div className="flex items-center space-x-2">
+              <Shield className="w-5 h-5 text-green-500" />
+              <span className="text-sm">SOC2 Compliant</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Award className="w-5 h-5 text-yellow-500" />
+              <span className="text-sm">Best Restaurant Tech 2024</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Users className="w-5 h-5 text-blue-500" />
+              <span className="text-sm">200+ Active Restaurants</span>
+            </div>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-2xl font-bold text-orange-600 mb-4">MenuPRO</h3>
             <p className="text-gray-400 mb-4">
-              Transforming the dining experience with innovative digital menu solutions.
+              The complete digital ordering solution for modern restaurants. No commission fees, just results.
             </p>
             <div className="flex space-x-4">
               <Facebook className="w-5 h-5 text-gray-400 hover:text-orange-600 cursor-pointer transition-colors" />

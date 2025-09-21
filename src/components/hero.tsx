@@ -13,8 +13,8 @@ export function Hero({ onLaunchApp }: HeroProps) {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <ImageWithFallback
-          src="https://images.unsplash.com/photo-1755811248279-1ab13b7d4384?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb3VybWV0JTIwZm9vZCUyMHBsYXRpbmclMjByZXN0YXVyYW50fGVufDF8fHx8MTc1ODQwMzE4MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-          alt="Gourmet food plating"
+          src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHNjYW5uaW5nJTIwcXIlMjBjb2RlJTIwcmVzdGF1cmFudHxlbnwxfHx8fDE3NTg0MDMxODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+          alt="Customer scanning QR code at restaurant table"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50"></div>
@@ -22,19 +22,32 @@ export function Hero({ onLaunchApp }: HeroProps) {
       
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
           Digital Menu Platform for Restaurants
         </h1>
+        <p className="text-lg md:text-xl mb-6 text-orange-200 font-medium">
+          Scan, Order, and Serve — no tablets, no delays.
+        </p>
         <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto">
           No commission fees. Just $19/month. Transform your restaurant with our complete digital ordering solution.
         </p>
-        <Button 
-          onClick={onLaunchApp}
-          size="lg" 
-          className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 text-xl rounded-full"
-        >
-          Start Free Trial
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Button 
+            onClick={onLaunchApp}
+            size="lg" 
+            className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 text-xl rounded-full"
+          >
+            Start Free Trial
+          </Button>
+          <Button 
+            onClick={onLaunchApp}
+            size="lg" 
+            variant="outline"
+            className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-xl rounded-full"
+          >
+            View Demo
+          </Button>
+        </div>
       </div>
     </section>
   );

@@ -11,10 +11,10 @@ export function Newsletter() {
         <div className="mb-8">
           <Mail className="w-16 h-16 mx-auto mb-6 text-orange-100" />
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Stay Updated with MenuPRO
+            Boost Your Restaurant with Digital Ordering Tips
           </h2>
           <p className="text-xl text-orange-100 max-w-2xl mx-auto">
-            Get the latest updates on new features, restaurant partnerships, and exclusive dining offers
+            Get expert insights, feature updates, and proven strategies to maximize your restaurant&apos;s revenue
           </p>
         </div>
         

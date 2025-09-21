@@ -79,30 +79,67 @@ export function MenuGrid() {
         
         {/* Pricing Section */}
         <div className="mt-20 text-center">
-          <div className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4">Simple Pricing</h3>
-            <div className="text-6xl font-bold text-orange-600 mb-2">$19</div>
-            <div className="text-xl text-gray-600 mb-6">per month</div>
-            <div className="space-y-3 text-left max-w-md mx-auto">
-              <div className="flex items-center">
-                <Check className="w-5 h-5 text-green-500 mr-3" />
-                <span>No setup fees</span>
+          <h3 className="text-4xl font-bold mb-8">Simple, Transparent Pricing</h3>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Monthly Plan */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-gray-200">
+              <h4 className="text-2xl font-bold mb-4">Monthly Plan</h4>
+              <div className="text-5xl font-bold text-orange-600 mb-2">$19</div>
+              <div className="text-lg text-gray-600 mb-6">per month</div>
+              <div className="space-y-3 text-left">
+                <div className="flex items-center">
+                  <Check className="w-5 h-5 text-green-500 mr-3" />
+                  <span>No setup fees</span>
+                </div>
+                <div className="flex items-center">
+                  <Check className="w-5 h-5 text-green-500 mr-3" />
+                  <span>No commission on transactions</span>
+                </div>
+                <div className="flex items-center">
+                  <Check className="w-5 h-5 text-green-500 mr-3" />
+                  <span>All features included</span>
+                </div>
+                <div className="flex items-center">
+                  <Check className="w-5 h-5 text-green-500 mr-3" />
+                  <span>24/7 customer support</span>
+                </div>
+                <div className="flex items-center">
+                  <Check className="w-5 h-5 text-green-500 mr-3" />
+                  <span>Cancel anytime</span>
+                </div>
               </div>
-              <div className="flex items-center">
-                <Check className="w-5 h-5 text-green-500 mr-3" />
-                <span>No commission on transactions</span>
-              </div>
-              <div className="flex items-center">
-                <Check className="w-5 h-5 text-green-500 mr-3" />
-                <span>All features included</span>
-              </div>
-              <div className="flex items-center">
-                <Check className="w-5 h-5 text-green-500 mr-3" />
-                <span>24/7 customer support</span>
-              </div>
-              <div className="flex items-center">
-                <Check className="w-5 h-5 text-green-500 mr-3" />
-                <span>Cancel anytime</span>
+            </div>
+
+            {/* Annual Plan */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-orange-500 relative">
+              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-600 text-white px-4 py-1">
+                Best Value
+              </Badge>
+              <h4 className="text-2xl font-bold mb-4">Annual Plan</h4>
+              <div className="text-5xl font-bold text-orange-600 mb-2">$190</div>
+              <div className="text-lg text-gray-600 mb-2">per year</div>
+              <div className="text-sm text-green-600 font-semibold mb-6">Save $38 (2 months free!)</div>
+              <div className="space-y-3 text-left">
+                <div className="flex items-center">
+                  <Check className="w-5 h-5 text-green-500 mr-3" />
+                  <span>Everything in Monthly</span>
+                </div>
+                <div className="flex items-center">
+                  <Check className="w-5 h-5 text-green-500 mr-3" />
+                  <span>Priority support</span>
+                </div>
+                <div className="flex items-center">
+                  <Check className="w-5 h-5 text-green-500 mr-3" />
+                  <span>Advanced analytics</span>
+                </div>
+                <div className="flex items-center">
+                  <Check className="w-5 h-5 text-green-500 mr-3" />
+                  <span>Custom branding</span>
+                </div>
+                <div className="flex items-center">
+                  <Check className="w-5 h-5 text-green-500 mr-3" />
+                  <span>Free setup & training</span>
+                </div>
               </div>
             </div>
           </div>
