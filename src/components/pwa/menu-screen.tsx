@@ -7,6 +7,7 @@ import { Badge } from "../ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { ShoppingCart, Plus } from "lucide-react";
+import Image from "next/image";
 import { MenuItem, CartItem } from "../pwa-app";
 
 interface MenuScreenProps {
@@ -105,9 +106,18 @@ export function MenuScreen({ onSelectItem, onViewCart, cartItems }: MenuScreenPr
       {/* Header */}
       <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="flex items-center justify-between p-4">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">MenuPRO</h1>
-            <p className="text-sm text-gray-600">Table 7 • The Garden Restaurant</p>
+          <div className="flex items-center space-x-3">
+            <Image
+              src="/menupro-logo.png"
+              alt="MenuPRO Logo"
+              width={32}
+              height={32}
+              className="w-8 h-8"
+            />
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">MenuPRO</h1>
+              <p className="text-sm text-gray-600">Table 7 • The Garden Restaurant</p>
+            </div>
           </div>
           <Button 
             onClick={onViewCart}

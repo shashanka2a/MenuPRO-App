@@ -7,6 +7,7 @@ import { Input } from "../ui/input";
 import { Badge } from "../ui/badge";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { ArrowLeft, Plus, Minus, Tag, Trash2 } from "lucide-react";
+import Image from "next/image";
 import { CartItem } from "../pwa-app";
 
 interface CartScreenProps {
@@ -45,7 +46,7 @@ export function CartScreen({ cartItems, onUpdateItem, onBack, onCheckout }: Cart
         {/* Header */}
         <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-gray-200">
           <div className="flex items-center p-4">
-            <Button 
+            <Button
               onClick={onBack}
               variant="ghost" 
               size="sm"
@@ -53,7 +54,16 @@ export function CartScreen({ cartItems, onUpdateItem, onBack, onCheckout }: Cart
             >
               <ArrowLeft className="w-5 h-5" />
             </Button>
-            <h1 className="text-lg font-semibold text-gray-900">Your Cart</h1>
+            <div className="flex items-center space-x-2">
+              <Image
+                src="/menupro-logo.png"
+                alt="MenuPRO Logo"
+                width={24}
+                height={24}
+                className="w-6 h-6"
+              />
+              <h1 className="text-lg font-semibold text-gray-900">Your Cart</h1>
+            </div>
           </div>
         </div>
 
@@ -89,7 +99,16 @@ export function CartScreen({ cartItems, onUpdateItem, onBack, onCheckout }: Cart
           >
             <ArrowLeft className="w-5 h-5" />
           </Button>
-          <h1 className="text-lg font-semibold text-gray-900">Your Cart ({cartItems.length} items)</h1>
+          <div className="flex items-center space-x-2">
+            <Image
+              src="/menupro-logo.png"
+              alt="MenuPRO Logo"
+              width={24}
+              height={24}
+              className="w-6 h-6"
+            />
+            <h1 className="text-lg font-semibold text-gray-900">Your Cart ({cartItems.length} items)</h1>
+          </div>
         </div>
       </div>
 

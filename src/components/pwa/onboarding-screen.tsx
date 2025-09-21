@@ -1,6 +1,7 @@
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { Smartphone, ShoppingCart, CheckCircle } from "lucide-react";
+import Image from "next/image";
 
 interface OnboardingScreenProps {
   onComplete: () => void;
@@ -30,8 +31,14 @@ export function OnboardingScreen({ onComplete }: OnboardingScreenProps) {
       <div className="w-full max-w-md mx-auto text-center">
         {/* Logo */}
         <div className="mb-12">
-          <div className="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="text-2xl font-bold text-white">M</span>
+          <div className="flex justify-center mb-4">
+            <Image
+              src="/menupro-logo.png"
+              alt="MenuPRO Logo"
+              width={80}
+              height={80}
+              className="w-20 h-20"
+            />
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">MenuPRO</h1>
           <p className="text-gray-600">Digital Menu Experience</p>

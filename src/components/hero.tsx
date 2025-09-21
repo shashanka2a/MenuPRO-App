@@ -2,6 +2,7 @@
 
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import Image from "next/image";
 
 interface HeroProps {
   onLaunchApp: () => void;
@@ -22,6 +23,15 @@ export function Hero({ onLaunchApp }: HeroProps) {
       
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+        <div className="flex justify-center mb-6">
+          <Image
+            src="/menupro-logo.png"
+            alt="MenuPRO Logo"
+            width={80}
+            height={80}
+            className="w-20 h-20"
+          />
+        </div>
         <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
           Digital Menu Platform for Restaurants
         </h1>
