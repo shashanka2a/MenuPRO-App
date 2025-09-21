@@ -9,51 +9,31 @@ const testimonials = [
     id: 1,
     name: "Sarah Johnson",
     role: "Restaurant Owner",
-    restaurant: "Bella Vista Bistro",
-    content: "MenuPRO has increased our revenue by 30% while reducing operational costs. The $19/month fee is nothing compared to the commission we were paying before!",
+    restaurant: "The Swamp Restaurant",
+    content: "MenuPRO has increased our revenue while reducing operational costs. The $19/month fee is nothing compared to the commission we were paying before!",
     rating: 5,
     avatar: "SJ",
-    logo: "🍽️"
+    logo: "🐊"
   },
   {
     id: 2,
     name: "Mike Chen",
-    role: "Restaurant Manager",
-    restaurant: "Golden Dragon",
-    content: "Since implementing MenuPRO, our order accuracy has improved by 95% and customer satisfaction is at an all-time high. The analytics help us make better business decisions.",
+    role: "Restaurant Owner",
+    restaurant: "Dragonfly Sushi",
+    content: "Since implementing MenuPRO, our order accuracy has improved significantly and customer satisfaction is at an all-time high. The analytics help us make better business decisions.",
     rating: 5,
     avatar: "MC",
-    logo: "🐉"
+    logo: "🍣"
   },
   {
     id: 3,
     name: "Emma Williams",
     role: "Restaurant Owner",
-    restaurant: "The Garden Table",
+    restaurant: "The Top",
     content: "Finally, a solution that doesn't take a cut of our sales! The flat $19/month fee means we keep 100% of our revenue. It's been a game-changer for our business.",
     rating: 5,
     avatar: "EW",
-    logo: "🌿"
-  },
-  {
-    id: 4,
-    name: "David Rodriguez",
-    role: "Restaurant Owner",
-    restaurant: "Casa de Sabor",
-    content: "Our customers love the QR code ordering. No more waiting for servers, and our staff can focus on food quality instead of taking orders.",
-    rating: 5,
-    avatar: "DR",
-    logo: "🌮"
-  },
-  {
-    id: 5,
-    name: "Lisa Park",
-    role: "Restaurant Manager",
-    restaurant: "Sakura Sushi",
-    content: "The real-time analytics helped us identify our most popular dishes and optimize our menu. Sales increased by 25% in the first month!",
-    rating: 5,
-    avatar: "LP",
-    logo: "🍣"
+    logo: "🏛️"
   }
 ];
 
@@ -94,12 +74,8 @@ export function Testimonials() {
             What Our Customers Say
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Join 200+ restaurants already using MenuPRO to transform their business
+            Join restaurants already using MenuPRO to transform their business
           </p>
-          <div className="mt-4 flex items-center justify-center space-x-2">
-            <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
-            <span className="text-sm text-gray-600">Trusted by 200+ restaurants</span>
-          </div>
         </div>
         
         {/* Carousel */}

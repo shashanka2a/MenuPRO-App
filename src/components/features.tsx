@@ -20,7 +20,7 @@ const features = [
     step: "02", 
     icon: ShoppingCart,
     title: "Real-time Order Management",
-    description: "Cut order errors by 30%. Track orders in real-time, manage inventory, and streamline your kitchen operations.",
+    description: "Cut order errors significantly. Track orders in real-time, manage inventory, and streamline your kitchen operations.",
     painPoint: "Reduce order mistakes & kitchen chaos"
   },
   {

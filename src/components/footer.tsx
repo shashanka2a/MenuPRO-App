@@ -7,7 +7,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto">
         {/* Social Proof Section */}
         <div className="text-center mb-12 pb-8 border-b border-gray-800">
-          <h3 className="text-2xl font-bold mb-6">Trusted by 200+ Restaurants</h3>
+          <h3 className="text-2xl font-bold mb-6">Trusted by Restaurants</h3>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
             <div className="flex items-center space-x-2">
               <Shield className="w-5 h-5 text-green-500" />
@@ -19,7 +19,7 @@ export function Footer() {
             </div>
             <div className="flex items-center space-x-2">
               <Users className="w-5 h-5 text-blue-500" />
-              <span className="text-sm">200+ Active Restaurants</span>
+              <span className="text-sm">Growing Community</span>
             </div>
           </div>
         </div>
