@@ -44,7 +44,7 @@ export function Hero({ onLaunchApp }: HeroProps) {
             onClick={onLaunchApp}
             size="lg" 
             variant="outline"
-            className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-xl rounded-full"
+            className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-6 text-xl rounded-full"
           >
             View Demo
           </Button>
