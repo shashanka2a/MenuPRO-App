@@ -71,15 +71,6 @@ export function Features({ onLaunchApp }: FeaturesProps) {
           ))}
         </div>
         
-        <div className="text-center">
-          <Button 
-            onClick={onLaunchApp}
-            size="lg" 
-            className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-full"
-          >
-            Get Started Today
-          </Button>
-        </div>
       </div>
     </section>
   );
