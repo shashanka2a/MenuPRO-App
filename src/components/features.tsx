@@ -37,12 +37,12 @@ export function Features({ onLaunchApp }: FeaturesProps) {
     <section className="py-20 px-4 bg-gradient-to-br from-orange-50 to-red-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Complete Restaurant Solution
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Everything you need to modernize your restaurant operations and boost revenue
-          </p>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          Why Choose MenuPRO?
+        </h2>
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          Everything you need to modernize your restaurant operations and boost revenue
+        </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
