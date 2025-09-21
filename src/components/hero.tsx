@@ -14,8 +14,8 @@ export function Hero({ onLaunchApp }: HeroProps) {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <ImageWithFallback
-          src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHNjYW5uaW5nJTIwcXIlMjBjb2RlJTIwcmVzdGF1cmFudHxlbnwxfHx8fDE3NTg0MDMxODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-          alt="Customer scanning QR code at restaurant table"
+          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwaW50ZXJpb3IlMjBkaW5pbmclMjByb29tJTIwYXV0aGVudGljfGVufDF8fHx8MTc1ODQwMzE4MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+          alt="Authentic restaurant dining room with warm lighting"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50"></div>
