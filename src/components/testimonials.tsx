@@ -9,31 +9,31 @@ const testimonials = [
     id: 1,
     name: "Sarah Johnson",
     role: "Restaurant Owner",
-    restaurant: "The Swamp Restaurant",
+    restaurant: "Bella Vista Bistro",
     content: "MenuPRO has increased our revenue while reducing operational costs. The $19/month fee is nothing compared to the commission we were paying before!",
     rating: 5,
     avatar: "SJ",
-    logo: "🐊"
+    logo: "🍽️"
   },
   {
     id: 2,
     name: "Mike Chen",
     role: "Restaurant Owner",
-    restaurant: "Dragonfly Sushi",
+    restaurant: "Golden Dragon",
     content: "Since implementing MenuPRO, our order accuracy has improved significantly and customer satisfaction is at an all-time high. The analytics help us make better business decisions.",
     rating: 5,
     avatar: "MC",
-    logo: "🍣"
+    logo: "🐉"
   },
   {
     id: 3,
     name: "Emma Williams",
     role: "Restaurant Owner",
-    restaurant: "The Top",
+    restaurant: "The Garden Table",
     content: "Finally, a solution that doesn't take a cut of our sales! The flat $19/month fee means we keep 100% of our revenue. It's been a game-changer for our business.",
     rating: 5,
     avatar: "EW",
-    logo: "🏛️"
+    logo: "🌿"
   }
 ];
 
