@@ -27,9 +27,13 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">M</span>
-              </div>
+              <Image
+                src="/menupro-logo.png"
+                alt="MenuPRO Logo"
+                width={40}
+                height={40}
+                className="w-10 h-10"
+              />
               <h3 className="text-2xl font-bold text-orange-600">MenuPRO</h3>
             </div>
             <p className="text-gray-400 mb-4">

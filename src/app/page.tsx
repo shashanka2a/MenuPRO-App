@@ -3,14 +3,11 @@
 import { useState } from "react";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
-import { Features } from "@/components/features";
 import { MenuGrid } from "@/components/menu-grid";
 import { MultiLocationPricing } from "@/components/multi-location-pricing";
 // import { HowItWorks } from "@/components/how-it-works";
-// import { FAQ } from "@/components/faq";
-import { RestaurantCTA } from "@/components/restaurant-cta";
-import { Testimonials } from "@/components/testimonials";
-import { Newsletter } from "@/components/newsletter";
+import { FAQ } from "@/components/faq";
+// import { Testimonials } from "@/components/testimonials";
 import { Footer } from "@/components/footer";
 import { PWAApp } from "@/components/pwa-app";
 import { RestaurantApp } from "@/components/restaurant/restaurant-app";
@@ -35,9 +32,6 @@ export default function Home() {
       />
       <main>
         <Hero onLaunchApp={() => setShowRestaurant(true)} />
-        <section id="features">
-          <Features onLaunchApp={() => setShowRestaurant(true)} />
-        </section>
         <section id="services">
           <MenuGrid />
         </section>
@@ -47,19 +41,12 @@ export default function Home() {
             // Handle quote request
           }} />
         </section>
-        {/* <section id="how-it-works">
-          <HowItWorks onLaunchApp={() => setShowRestaurant(true)} />
-        </section>
         <section id="faq">
           <FAQ onLaunchApp={() => setShowRestaurant(true)} />
-        </section> */}
-        <section id="restaurant-cta">
-          <RestaurantCTA onRestaurantSignup={() => setShowRestaurant(true)} />
         </section>
-        <section id="testimonials">
+        {/* <section id="testimonials">
           <Testimonials />
-        </section>
-        <Newsletter />
+        </section> */}
       </main>
       <Footer />
     </div>
