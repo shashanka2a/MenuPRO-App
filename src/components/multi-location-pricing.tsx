@@ -134,7 +134,7 @@ export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) 
               <Button
                 onClick={() => setShowCalculator(true)}
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-3"
+                className="border-2 border-white text-orange-300 hover:bg-white hover:text-orange-600 px-8 py-3"
               >
                 Calculate Your Price
                 <ArrowRight className="w-4 h-4 ml-2" />

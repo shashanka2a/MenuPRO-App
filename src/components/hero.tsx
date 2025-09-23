@@ -30,7 +30,7 @@ export function Hero({ onLaunchApp }: HeroProps) {
           Scan, Order, and Serve — no tablets, no delays.
         </p>
         <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto">
-          No commission fees. Just $19/month. Transform your restaurant with our complete digital ordering solution.
+          Customers order directly from their table. No waiters needed. Add allergies, special instructions, and customize orders exactly how they want them.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
@@ -38,7 +38,7 @@ export function Hero({ onLaunchApp }: HeroProps) {
             size="lg" 
             className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 text-xl rounded-full"
           >
-            Start Free Trial
+            Get Notified When We Launch
           </Button>
           <Button 
             onClick={onLaunchApp}

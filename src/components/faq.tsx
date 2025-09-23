@@ -11,28 +11,28 @@ interface FAQProps {
 
 const faqs = [
   {
-    question: "How much does MenuPRO cost?",
-    answer: "MenuPRO costs just $19/month with no commission fees. This is significantly less than Square ($69+/month) and Toast ($79+/month). You keep 100% of your revenue with our flat-rate pricing."
+    question: "How does MenuPRO work?",
+    answer: "Customers scan a QR code at their table using their smartphone, browse your digital menu, and place orders directly. No need for waiters to take orders - customers order what they want, when they want it."
   },
   {
-    question: "How long does setup take?",
-    answer: "Setup takes just 15 minutes on average. Simply upload your menu, generate QR codes, and you're ready to start taking digital orders. No technical expertise required."
+    question: "What are the benefits for customers?",
+    answer: "Customers can add allergy information, special dietary requirements, and specific cooking instructions that waiters might forget. They can also see detailed menu descriptions, photos, and customize their orders exactly how they want them."
+  },
+  {
+    question: "How do customers pay?",
+    answer: "Customers pay directly through the app when they check out. Payment processing is coming soon - for now, customers can place orders and pay at the table or counter as usual."
   },
   {
     question: "Do I need any special equipment?",
     answer: "No special equipment needed! Customers use their own smartphones to scan QR codes and place orders. You just need a device to manage orders (tablet, phone, or computer)."
   },
   {
-    question: "Can I use MenuPRO for multiple locations?",
-    answer: "Yes! MenuPRO supports unlimited locations with centralized management. Each location gets its own QR codes and can have different menus, pricing, and settings."
-  },
-  {
-    question: "What happens if customers don't have smartphones?",
+    question: "What if customers don't have smartphones?",
     answer: "We provide backup options including printed menus with QR codes and staff-assisted ordering. Our system works on any device with a camera and internet connection."
   },
   {
-    question: "Is there a free trial?",
-    answer: "Yes! We offer a 14-day free trial with no credit card required. You can test all features and see how MenuPRO works for your restaurant before committing."
+    question: "When will MenuPRO be available?",
+    answer: "MenuPRO is launching soon! We're currently in development and will be available for restaurants to start using in the coming months. Sign up to be notified when we launch."
   }
 ];
 
@@ -93,10 +93,10 @@ export function FAQ({ onLaunchApp }: FAQProps) {
             size="lg"
             className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg rounded-full"
           >
-            Start Free Trial
+            Get Notified When We Launch
           </Button>
           <p className="text-sm text-gray-500 mt-4">
-            No credit card required • 14-day free trial
+            Be the first to know when MenuPRO is available
           </p>
         </div>
       </div>

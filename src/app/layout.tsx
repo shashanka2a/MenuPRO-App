@@ -48,9 +48,9 @@ export const metadata: Metadata = {
     maximumScale: 1,
   },
   icons: {
-    icon: '/menupro-logo.png',
-    shortcut: '/menupro-logo.png',
-    apple: '/menupro-logo.png',
+    icon: '/menupro-icon.svg',
+    shortcut: '/menupro-icon.svg',
+    apple: '/menupro-icon.svg',
   },
 }
 

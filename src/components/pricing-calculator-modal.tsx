@@ -185,26 +185,44 @@ export function PricingCalculatorModal({ isOpen, onClose, onGetQuote }: PricingC
                 <div className="space-y-3">
                   <button
                     onClick={() => setLocationType('single')}
-                    className={`w-full p-4 border-2 rounded-lg text-left transition-all ${
+                    className={`w-full p-4 border-2 rounded-lg text-left transition-all relative ${
                       locationType === 'single' 
-                        ? 'border-orange-500 bg-orange-50' 
+                        ? 'border-orange-500 bg-orange-50 ring-2 ring-orange-200' 
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                   >
-                    <div className="font-medium">{locationPricing.single.label}</div>
-                    <div className="text-sm text-gray-600">{locationPricing.single.description}</div>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="font-medium">{locationPricing.single.label}</div>
+                        <div className="text-sm text-gray-600">{locationPricing.single.description}</div>
+                      </div>
+                      {locationType === 'single' && (
+                        <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
+                          <CheckCircle className="w-4 h-4 text-white" />
+                        </div>
+                      )}
+                    </div>
                   </button>
                   
                   <button
                     onClick={() => setLocationType('multi')}
-                    className={`w-full p-4 border-2 rounded-lg text-left transition-all ${
+                    className={`w-full p-4 border-2 rounded-lg text-left transition-all relative ${
                       locationType === 'multi' 
-                        ? 'border-orange-500 bg-orange-50' 
+                        ? 'border-orange-500 bg-orange-50 ring-2 ring-orange-200' 
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                   >
-                    <div className="font-medium">{locationPricing.multi.label}</div>
-                    <div className="text-sm text-gray-600">{locationPricing.multi.description}</div>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="font-medium">{locationPricing.multi.label}</div>
+                        <div className="text-sm text-gray-600">{locationPricing.multi.description}</div>
+                      </div>
+                      {locationType === 'multi' && (
+                        <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
+                          <CheckCircle className="w-4 h-4 text-white" />
+                        </div>
+                      )}
+                    </div>
                   </button>
                 </div>
 
