@@ -1,3 +1,13 @@
 {
-  "/_not-found/page": "app/_not-found/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/orders/create/route": "app/api/orders/create/route.js",
+  "/api/restaurant/generate-qr/route": "app/api/restaurant/generate-qr/route.js",
+  "/api/restaurant/verify-otp/route": "app/api/restaurant/verify-otp/route.js",
+  "/api/auth/verify-otp/route": "app/api/auth/verify-otp/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/api/restaurant/parse-menu/route": "app/api/restaurant/parse-menu/route.js",
+  "/api/restaurant/send-verification/route": "app/api/restaurant/send-verification/route.js",
+  "/api/auth/send-verification/route": "app/api/auth/send-verification/route.js",
+  "/page": "app/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js"
 }

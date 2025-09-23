@@ -270,7 +270,7 @@ export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) 
         <Card className="border-none shadow-xl bg-white mb-16">
           <CardHeader>
             <CardTitle className="text-2xl text-center">Choose Your Features</CardTitle>
-            <p className="text-center text-gray-600">Select the features that best fit your restaurant's needs</p>
+            <p className="text-center text-gray-600">Select the features that best fit your restaurant&apos;s needs</p>
           </CardHeader>
           <CardContent className="p-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createWorker } from 'tesseract.js';
-import pdfParse from 'pdf-parse';
 
 export async function POST(request: NextRequest) {
   try {
@@ -21,13 +20,12 @@ export async function POST(request: NextRequest) {
     if (method === 'pdf') {
       // Parse PDF
       const buffer = await file.arrayBuffer();
+      const pdfParse = (await import('pdf-parse')).default;
       const pdfData = await pdfParse(Buffer.from(buffer));
       extractedText = pdfData.text;
     } else if (method === 'physical') {
       // OCR for images
-      const worker = await createWorker();
-      await worker.loadLanguage('eng');
-      await worker.initialize('eng');
+      const worker = await createWorker('eng');
       
       const buffer = await file.arrayBuffer();
       const { data: { text } } = await worker.recognize(Buffer.from(buffer));

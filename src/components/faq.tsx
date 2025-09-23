@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from "react";
-import { Card, CardContent } from "../ui/card";
-import { Button } from "../ui/button";
+import { Card, CardContent } from "@ui/card";
+import { Button } from "@ui/button";
 import { ChevronDown, ChevronUp, HelpCircle, DollarSign, Smartphone, Shield, Clock, Users } from "lucide-react";
 
 interface FAQProps {
@@ -131,7 +131,7 @@ export function FAQ({ onLaunchApp }: FAQProps) {
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Everything you need to know about MenuPRO, from pricing to features. 
-            Can't find what you're looking for? Contact our support team.
+            Can&apos;t find what you&apos;re looking for? Contact our support team.
           </p>
         </div>
 

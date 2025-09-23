@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useState, useEffect, useRef } from "react";
 import { Button } from "../ui/button";
@@ -164,7 +164,7 @@ export function RestaurantOTPScreen({
                 </div>
                 <h2 className="text-xl font-semibold text-gray-900 mb-2">Email Verified!</h2>
                 <p className="text-gray-600">
-                  Welcome to MenuPRO! Let's set up your restaurant dashboard.
+                  Welcome to MenuPRO! Let&apos;s set up your restaurant dashboard.
                 </p>
               </div>
             </CardContent>
@@ -203,7 +203,7 @@ export function RestaurantOTPScreen({
                 {otp.map((digit, index) => (
                   <Input
                     key={index}
-                    ref={(el) => (inputRefs.current[index] = el)}
+                    ref={(el) => { inputRefs.current[index] = el; }}
                     type="text"
                     inputMode="numeric"
                     pattern="[0-9]"

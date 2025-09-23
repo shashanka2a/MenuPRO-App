@@ -95,7 +95,7 @@ export function EmailVerificationScreen({ onEmailVerified, onBack }: EmailVerifi
                 </div>
                 <h2 className="text-xl font-semibold text-gray-900 mb-2">Verification Email Sent!</h2>
                 <p className="text-gray-600 mb-4">
-                  We've sent a verification code to:
+                  We&apos;ve sent a verification code to:
                 </p>
                 <p className="font-medium text-orange-600 mb-6">{email}</p>
                 <p className="text-sm text-gray-500 mb-6">
@@ -113,7 +113,7 @@ export function EmailVerificationScreen({ onEmailVerified, onBack }: EmailVerifi
 
           {/* Resend Option */}
           <div className="text-center">
-            <p className="text-sm text-gray-500 mb-2">Didn't receive the email?</p>
+            <p className="text-sm text-gray-500 mb-2">Didn&apos;t receive the email?</p>
             <button
               onClick={() => setSuccess(false)}
               className="text-orange-600 hover:text-orange-700 text-sm font-medium"
@@ -141,7 +141,7 @@ export function EmailVerificationScreen({ onEmailVerified, onBack }: EmailVerifi
             />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Verify Your Email</h1>
-          <p className="text-gray-600">We'll send you a verification code to prevent spam orders</p>
+          <p className="text-gray-600">We&apos;ll send you a verification code to prevent spam orders</p>
         </div>
 
         {/* Email Form */}

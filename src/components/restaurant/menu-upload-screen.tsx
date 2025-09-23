@@ -8,7 +8,7 @@ import { Progress } from "../ui/progress";
 import { 
   Upload, 
   FileText, 
-  Image, 
+  Image as ImageIcon, 
   CheckCircle, 
   AlertCircle, 
   Eye, 
@@ -161,7 +161,7 @@ export function MenuUploadScreen({ onMenuUploaded, onBack, onSkip }: MenuUploadS
             />
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Upload Your Menu</h1>
-          <p className="text-gray-600">We'll help you digitize your menu automatically</p>
+          <p className="text-gray-600">We&apos;ll help you digitize your menu automatically</p>
         </div>
 
         {/* Upload Method Selection */}
@@ -172,10 +172,10 @@ export function MenuUploadScreen({ onMenuUploaded, onBack, onSkip }: MenuUploadS
               onClick={() => setUploadMethod('physical')}
             >
               <CardContent className="p-8 text-center">
-                <Image className="w-16 h-16 mx-auto mb-4 text-orange-600" />
+                <ImageIcon className="w-16 h-16 mx-auto mb-4 text-orange-600" />
                 <h3 className="text-xl font-semibold mb-2">Physical Menu Photo</h3>
                 <p className="text-gray-600 mb-4">
-                  Take a photo of your physical menu and we'll extract the details using AI
+                  Take a photo of your physical menu and we&apos;ll extract the details using AI
                 </p>
                 <Badge variant="secondary" className="bg-orange-100 text-orange-800">
                   AI-Powered OCR
@@ -191,7 +191,7 @@ export function MenuUploadScreen({ onMenuUploaded, onBack, onSkip }: MenuUploadS
                 <FileText className="w-16 h-16 mx-auto mb-4 text-orange-600" />
                 <h3 className="text-xl font-semibold mb-2">PDF Menu</h3>
                 <p className="text-gray-600 mb-4">
-                  Upload your PDF menu and we'll parse the text to extract menu items
+                  Upload your PDF menu and we&apos;ll parse the text to extract menu items
                 </p>
                 <Badge variant="secondary" className="bg-green-100 text-green-800">
                   Text Parsing
@@ -206,7 +206,7 @@ export function MenuUploadScreen({ onMenuUploaded, onBack, onSkip }: MenuUploadS
           <Card className="mb-8 border-none shadow-lg bg-white/80 backdrop-blur-sm">
             <CardContent className="p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <Image className="w-6 h-6 mr-3 text-orange-600" />
+                <ImageIcon className="w-6 h-6 mr-3 text-orange-600" />
                 Upload Physical Menu
               </h2>
               
@@ -235,7 +235,7 @@ export function MenuUploadScreen({ onMenuUploaded, onBack, onSkip }: MenuUploadS
                   </div>
 
                   <div className="text-center p-6 border-2 border-dashed border-gray-300 rounded-lg">
-                    <Image className="w-12 h-12 mx-auto mb-4 text-gray-400" />
+                    <ImageIcon className="w-12 h-12 mx-auto mb-4 text-gray-400" />
                     <h3 className="font-semibold mb-2">Take Photo</h3>
                     <p className="text-sm text-gray-600 mb-4">
                       Use your camera to capture the menu
@@ -285,7 +285,7 @@ export function MenuUploadScreen({ onMenuUploaded, onBack, onSkip }: MenuUploadS
                 <FileText className="w-16 h-16 mx-auto mb-4 text-gray-400" />
                 <h3 className="text-lg font-semibold mb-2">Upload Your PDF Menu</h3>
                 <p className="text-gray-600 mb-6">
-                  We'll automatically extract menu items from your PDF
+                  We&apos;ll automatically extract menu items from your PDF
                 </p>
                 <Button
                   onClick={() => fileInputRef.current?.click()}

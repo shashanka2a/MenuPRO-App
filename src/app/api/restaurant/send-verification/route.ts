@@ -6,7 +6,7 @@ import crypto from 'crypto';
 const otpStore = new Map<string, { otp: string; expires: number }>();
 
 // Gmail SMTP configuration
-const transporter = nodemailer.createTransporter({
+const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: process.env.GMAIL_USER,
@@ -90,7 +90,7 @@ export async function POST(request: NextRequest) {
 // Clean up expired OTPs periodically
 setInterval(() => {
   const now = Date.now();
-  for (const [email, data] of otpStore.entries()) {
+  for (const [email, data] of Array.from(otpStore.entries())) {
     if (data.expires < now) {
       otpStore.delete(email);
     }
