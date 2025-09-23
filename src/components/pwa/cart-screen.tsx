@@ -14,12 +14,13 @@ interface CartScreenProps {
   cartItems: CartItem[];
   onUpdateItem: (itemId: string, quantity: number, selectedOptions?: any) => void;
   onBack: () => void;
-  onCheckout: () => void;
+  onCheckout: (orderId: string) => void;
 }
 
 export function CartScreen({ cartItems, onUpdateItem, onBack, onCheckout }: CartScreenProps) {
   const [couponCode, setCouponCode] = useState("");
   const [appliedCoupon, setAppliedCoupon] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const subtotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
   const discount = appliedCoupon === "SAVE10" ? subtotal * 0.1 : 0;
@@ -38,6 +39,52 @@ export function CartScreen({ cartItems, onUpdateItem, onBack, onCheckout }: Cart
 
   const handleQuantityChange = (item: CartItem, newQuantity: number) => {
     onUpdateItem(item.id, newQuantity, item.selectedOptions);
+  };
+
+  const handleSubmitOrder = async () => {
+    setIsSubmitting(true);
+    
+    try {
+      // Get auth token from localStorage
+      const token = localStorage.getItem('authToken');
+      if (!token) {
+        throw new Error('Authentication required');
+      }
+
+      // Prepare order data
+      const orderData = {
+        items: cartItems.map(item => ({
+          id: item.id,
+          name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+          selectedOptions: item.selectedOptions
+        }))
+      };
+
+      // Submit order
+      const response = await fetch('/api/orders/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(orderData)
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        onCheckout(data.order.id);
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to create order');
+      }
+    } catch (error) {
+      console.error('Order submission error:', error);
+      alert('Failed to submit order. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (cartItems.length === 0) {
@@ -232,11 +279,12 @@ export function CartScreen({ cartItems, onUpdateItem, onBack, onCheckout }: Cart
       {/* Fixed Bottom CTA */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200">
         <Button 
-          onClick={onCheckout}
-          className="w-full bg-orange-600 hover:bg-orange-700 text-white py-4 rounded-xl"
+          onClick={handleSubmitOrder}
+          disabled={isSubmitting}
+          className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-gray-400 text-white py-4 rounded-xl"
           size="lg"
         >
-          Proceed to Payment • ${total.toFixed(2)}
+          {isSubmitting ? "Placing Order..." : `Place Order - $${total.toFixed(2)}`}
         </Button>
       </div>
     </div>
