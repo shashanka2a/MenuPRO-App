@@ -9,17 +9,16 @@ import {
   Star, 
   MapPin, 
   Users, 
-  Calculator,
   ArrowRight
 } from "lucide-react";
-import { PricingCalculatorModal } from "./pricing-calculator-modal";
+import { CustomPricingModal } from "./custom-pricing-modal";
 
 interface MultiLocationPricingProps {
   onGetQuote: (data: any) => void;
 }
 
 export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) {
-  const [showCalculator, setShowCalculator] = useState(false);
+  const [showCustomPricing, setShowCustomPricing] = useState(false);
 
   const pricingPlans = [
     {
@@ -110,7 +109,6 @@ export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) 
                       ? 'bg-orange-600 hover:bg-orange-700 text-white' 
                       : 'bg-gray-900 hover:bg-gray-800 text-white'
                   }`}
-                  onClick={() => setShowCalculator(true)}
                 >
                   Get Started
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -120,27 +118,17 @@ export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) 
           ))}
         </div>
 
-        {/* Custom Quote Section */}
-        <div className="text-center">
-          <Card className="max-w-2xl mx-auto border-none shadow-lg bg-gradient-to-r from-orange-500 to-red-500 text-white">
-            <CardContent className="p-8">
-              <div className="flex items-center justify-center mb-4">
-                <Calculator className="w-8 h-8 mr-3" />
-                <h3 className="text-2xl font-bold">Need Custom Pricing?</h3>
-              </div>
-              <p className="text-orange-100 mb-6">
-                Get a personalized quote based on your specific needs, locations, and features.
-              </p>
-              <Button
-                onClick={() => setShowCalculator(true)}
-                variant="outline"
-                className="border-2 border-white text-orange-300 hover:bg-white hover:text-orange-600 px-8 py-3"
-              >
-                Calculate Your Price
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </CardContent>
-          </Card>
+        {/* Custom Quote Question */}
+        <div className="text-center mt-12">
+          <p className="text-lg text-gray-600 mb-4">
+            Have multiple locations? Try our{" "}
+            <button 
+              onClick={() => setShowCustomPricing(true)}
+              className="text-orange-600 underline hover:text-orange-700 font-medium"
+            >
+              custom pricing
+            </button>
+          </p>
         </div>
 
         {/* Comparison Section */}
@@ -178,10 +166,10 @@ export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) 
         </div>
       </div>
 
-      {/* Pricing Calculator Modal */}
-      <PricingCalculatorModal
-        isOpen={showCalculator}
-        onClose={() => setShowCalculator(false)}
+      {/* Custom Pricing Modal */}
+      <CustomPricingModal
+        isOpen={showCustomPricing}
+        onClose={() => setShowCustomPricing(false)}
         onGetQuote={onGetQuote}
       />
     </section>

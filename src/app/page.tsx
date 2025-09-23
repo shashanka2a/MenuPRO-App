@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { MenuGrid } from "@/components/menu-grid";
-// import { MultiLocationPricing } from "@/components/multi-location-pricing";
+import { MultiLocationPricing } from "@/components/multi-location-pricing";
 // import { HowItWorks } from "@/components/how-it-works";
 import { FAQ } from "@/components/faq";
 // import { Testimonials } from "@/components/testimonials";
@@ -35,12 +35,12 @@ export default function Home() {
         <section id="services">
           <MenuGrid />
         </section>
-        {/* <section id="pricing">
+        <section id="pricing">
           <MultiLocationPricing onGetQuote={(data) => {
             console.log('Pricing quote requested:', data);
             // Handle quote request
           }} />
-        </section> */}
+        </section>
         <section id="faq">
           <FAQ onLaunchApp={() => setShowRestaurant(true)} />
         </section>
