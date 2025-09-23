@@ -40,23 +40,11 @@ export function EmailVerificationScreen({ onEmailVerified, onBack }: EmailVerifi
     setError("");
 
     try {
-      // Send verification email
-      const response = await fetch('/api/auth/send-verification', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      if (response.ok) {
-        setSuccess(true);
-        // Store email in localStorage for OTP verification
-        localStorage.setItem('pendingEmail', email);
-      } else {
-        const data = await response.json();
-        setError(data.message || "Failed to send verification email");
-      }
+      // Mock email sending - just show success after a brief delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setSuccess(true);
+      // Store email in localStorage for OTP verification
+      localStorage.setItem('pendingEmail', email);
     } catch (error) {
       setError("Network error. Please try again.");
     } finally {

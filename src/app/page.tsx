@@ -30,13 +30,13 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Header 
-        onLaunchApp={() => setShowPWA(true)} 
+        onLaunchApp={() => setShowRestaurant(true)} 
         onRestaurantSignup={() => setShowRestaurant(true)}
       />
       <main>
-        <Hero onLaunchApp={() => setShowPWA(true)} />
+        <Hero onLaunchApp={() => setShowRestaurant(true)} />
         <section id="features">
-          <Features onLaunchApp={() => setShowPWA(true)} />
+          <Features onLaunchApp={() => setShowRestaurant(true)} />
         </section>
         <section id="services">
           <MenuGrid />
@@ -48,10 +48,10 @@ export default function Home() {
           }} />
         </section>
         {/* <section id="how-it-works">
-          <HowItWorks onLaunchApp={() => setShowPWA(true)} />
+          <HowItWorks onLaunchApp={() => setShowRestaurant(true)} />
         </section>
         <section id="faq">
-          <FAQ onLaunchApp={() => setShowPWA(true)} />
+          <FAQ onLaunchApp={() => setShowRestaurant(true)} />
         </section> */}
         <section id="restaurant-cta">
           <RestaurantCTA onRestaurantSignup={() => setShowRestaurant(true)} />

@@ -94,26 +94,14 @@ export function RestaurantOTPScreen({
     setError("");
 
     try {
-      const response = await fetch('/api/restaurant/verify-otp', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          email, 
-          otp: otpCode 
-        }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
+      // Mock OTP verification - accept "123456" as valid code
+      if (otpCode === "123456") {
         setSuccess(true);
         setTimeout(() => {
-          onVerificationSuccess(data.token);
+          onVerificationSuccess("mock-restaurant-token-123456");
         }, 1500);
       } else {
-        const data = await response.json();
-        setError(data.message || "Invalid verification code");
+        setError("Invalid verification code. Please enter 123456 for demo purposes.");
       }
     } catch (error) {
       setError("Network error. Please try again.");
@@ -127,24 +115,13 @@ export function RestaurantOTPScreen({
     setError("");
     
     try {
-      const response = await fetch('/api/restaurant/send-verification', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      if (response.ok) {
-        setTimeLeft(600);
-        setCanResend(false);
-        setOtp(["", "", "", "", "", ""]);
-        // Focus first input
-        inputRefs.current[0]?.focus();
-      } else {
-        const data = await response.json();
-        setError(data.message || "Failed to resend code");
-      }
+      // Mock resend - just reset the form
+      await new Promise(resolve => setTimeout(resolve, 500));
+      setTimeLeft(600);
+      setCanResend(false);
+      setOtp(["", "", "", "", "", ""]);
+      // Focus first input
+      inputRefs.current[0]?.focus();
     } catch (error) {
       setError("Network error. Please try again.");
     } finally {
@@ -193,6 +170,11 @@ export function RestaurantOTPScreen({
             We sent a 6-digit code to:
           </p>
           <p className="font-medium text-orange-600">{email}</p>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-4">
+            <p className="text-sm text-blue-800">
+              <strong>Demo Mode:</strong> Enter <code className="bg-blue-100 px-1 rounded">123456</code> to continue
+            </p>
+          </div>
         </div>
 
         {/* OTP Form */}

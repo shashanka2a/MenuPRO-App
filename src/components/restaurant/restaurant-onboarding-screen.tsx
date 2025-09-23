@@ -75,22 +75,10 @@ export function RestaurantOnboardingScreen({ onEmailVerified, onBack }: Restaura
     setError("");
 
     try {
-      // Send verification email
-      const response = await fetch('/api/restaurant/send-verification', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: restaurantData.email }),
-      });
-
-      if (response.ok) {
-        setSuccess(true);
-        localStorage.setItem('pendingRestaurantEmail', restaurantData.email);
-      } else {
-        const data = await response.json();
-        setError(data.message || "Failed to send verification email");
-      }
+      // Mock email sending - just show success after a brief delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setSuccess(true);
+      localStorage.setItem('pendingRestaurantEmail', restaurantData.email);
     } catch (error) {
       setError("Network error. Please try again.");
     } finally {
