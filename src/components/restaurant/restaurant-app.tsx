@@ -4,9 +4,10 @@ import { useState } from "react";
 import { RestaurantOnboardingScreen } from "./restaurant-onboarding-screen";
 import { RestaurantOTPScreen } from "./restaurant-otp-screen";
 import { MenuUploadScreen } from "./menu-upload-screen";
+import { TableQRScreen } from "./table-qr-screen";
 import { RestaurantDashboard } from "./restaurant-dashboard";
 
-export type RestaurantScreen = 'onboarding' | 'otp-verification' | 'menu-upload' | 'dashboard';
+export type RestaurantScreen = 'onboarding' | 'otp-verification' | 'menu-upload' | 'table-qr' | 'dashboard';
 
 export interface RestaurantData {
   name: string;
@@ -53,6 +54,10 @@ export function RestaurantApp() {
 
   const handleMenuUploaded = (items: MenuItem[]) => {
     setMenuItems(items);
+    setCurrentScreen('table-qr');
+  };
+
+  const handleTableQRComplete = () => {
     setCurrentScreen('dashboard');
   };
 
@@ -91,7 +96,16 @@ export function RestaurantApp() {
           <MenuUploadScreen 
             onMenuUploaded={handleMenuUploaded}
             onBack={() => setCurrentScreen('otp-verification')}
-            onSkip={() => setCurrentScreen('dashboard')}
+            onSkip={() => setCurrentScreen('table-qr')}
+          />
+        );
+      case 'table-qr':
+        return (
+          <TableQRScreen 
+            restaurantId="rest_123" // In real app, use actual restaurant ID
+            restaurantName={restaurantData?.name || 'Your Restaurant'}
+            onComplete={handleTableQRComplete}
+            onBack={() => setCurrentScreen('menu-upload')}
           />
         );
       case 'dashboard':
