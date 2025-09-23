@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Instagram, Linkedin, Shield, Award, Users } from "lucide-react";
-import { MenuPROIcon } from "./menupro-icon";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -27,7 +27,13 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <MenuPROIcon size={40} />
+              <Image
+                src="/logo-icon.svg"
+                alt="MenuPRO Icon"
+                width={40}
+                height={40}
+                className="w-10 h-10"
+              />
               <h3 className="text-2xl font-bold text-orange-600">MenuPRO</h3>
             </div>
             <p className="text-gray-400 mb-4">
