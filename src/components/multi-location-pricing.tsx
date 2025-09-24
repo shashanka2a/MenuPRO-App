@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Check, Star } from "lucide-react";
+import { CustomPricingModal } from "./custom-pricing-modal";
 
 interface MultiLocationPricingProps {
   onGetQuote: (data: any) => void;
@@ -14,6 +15,7 @@ type BillingCycle = 'monthly' | 'annual'
 
 export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) {
   const [billing, setBilling] = useState<BillingCycle>('monthly')
+  const [showCustomPricing, setShowCustomPricing] = useState(false)
 
   // Helper to format prices based on billing cycle
   const formatPrice = (opts: { monthly?: number; annual?: number; suffix?: string }) => {
@@ -55,21 +57,6 @@ export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) 
         'Priority Support',
       ],
       popular: true,
-    },
-    {
-      id: 'pro',
-      name: 'Pro',
-      // Fixed annual plan per spec
-      price: { value: '$190', period: 'per year' },
-      note: 'Annual Plan',
-      features: [
-        'Priority Support',
-        'White-glove Onboarding',
-        'Staff Training',
-        'All Starter Features',
-        'All Growth Features',
-      ],
-      popular: false,
     },
   ] as const
 
@@ -141,6 +128,35 @@ export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) 
             </CardContent>
           </Card>
           ))}
+
+          {/* Custom pricing card (replaces previous Pro) */}
+          <Card className="relative transition-all hover:shadow-xl border border-gray-200">
+            <CardHeader className="text-center pb-2">
+              <CardTitle className="text-2xl font-bold text-gray-900">Custom</CardTitle>
+              <div className="mt-2 mb-1">
+                <span className="text-4xl font-extrabold text-orange-600">$190</span>
+                <span className="text-gray-600 ml-2">per year</span>
+              </div>
+              <p className="text-sm text-gray-500">Annual Plan • Onboarding & Training</p>
+            </CardHeader>
+
+            <CardContent>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-center text-gray-700"><Check className="w-5 h-5 text-green-500 mr-2" /> Priority Support</li>
+                <li className="flex items-center text-gray-700"><Check className="w-5 h-5 text-green-500 mr-2" /> White-glove Onboarding</li>
+                <li className="flex items-center text-gray-700"><Check className="w-5 h-5 text-green-500 mr-2" /> Staff Training</li>
+                <li className="flex items-center text-gray-700"><Check className="w-5 h-5 text-green-500 mr-2" /> All Starter Features</li>
+                <li className="flex items-center text-gray-700"><Check className="w-5 h-5 text-green-500 mr-2" /> All Growth Features</li>
+              </ul>
+
+              <Button
+                onClick={() => setShowCustomPricing(true)}
+                className="w-full bg-orange-600 hover:bg-orange-700 text-white"
+              >
+                Get Custom Quote
+              </Button>
+            </CardContent>
+          </Card>
         </div>
 
         {/* All Features Included note */}
@@ -149,6 +165,12 @@ export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) 
         </div>
       </div>
 
+      {/* Custom Pricing Modal */}
+      <CustomPricingModal
+        isOpen={showCustomPricing}
+        onClose={() => setShowCustomPricing(false)}
+        onGetQuote={onGetQuote}
+      />
     </section>
   );
 }
