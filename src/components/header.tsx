@@ -25,12 +25,9 @@ export function Header({ onLaunchApp, onRestaurantSignup }: HeaderProps) {
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#features" className="text-gray-600 hover:text-orange-600 transition-colors">Features</a>
-          <a href="#services" className="text-gray-600 hover:text-orange-600 transition-colors">Services</a>
+          <a href="#services" className="text-gray-600 hover:text-orange-600 transition-colors">Features</a>
           <a href="#pricing" className="text-gray-600 hover:text-orange-600 transition-colors">Pricing</a>
-          <a href="#how-it-works" className="text-gray-600 hover:text-orange-600 transition-colors">How It Works</a>
           <a href="#faq" className="text-gray-600 hover:text-orange-600 transition-colors">FAQ</a>
-          <a href="#testimonials" className="text-gray-600 hover:text-orange-600 transition-colors">Reviews</a>
           <div className="flex items-center space-x-3">
             {onRestaurantSignup && (
               <Button 

@@ -22,7 +22,9 @@ export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) 
     if (billing === 'monthly' && opts.monthly !== undefined) {
       return { value: `$${opts.monthly}`, period: 'per month' }
     }
-    const annualValue = opts.annual !== undefined ? opts.annual : (opts.monthly ? opts.monthly * 12 : 0)
+    // 20% discount on annual
+    const rawAnnual = opts.annual !== undefined ? opts.annual : (opts.monthly ? opts.monthly * 12 : 0)
+    const annualValue = Math.round(rawAnnual * 0.8)
     return { value: `$${annualValue}`, period: 'per year' }
   }
 
@@ -84,7 +86,7 @@ export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) 
               onClick={() => setBilling('annual')}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${billing === 'annual' ? 'bg-orange-600 text-white' : 'text-gray-700 hover:bg-gray-100'}`}
             >
-              Annual
+              Annual <span className="ml-1 text-xs font-semibold text-green-600">(Save 20%)</span>
             </button>
               </div>
         </div>
@@ -94,10 +96,12 @@ export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) 
           {plans.map((plan) => (
             <Card
               key={plan.id}
-              className={`relative transition-all hover:shadow-xl ${
+              className={`relative transition-all hover:shadow-xl border ${
                 plan.id === 'growth'
-                  ? 'border border-orange-200 bg-white/90 [background:linear-gradient(#fff,#fff)_padding-box,linear-gradient(135deg,#fb923c,#ef4444)_border-box] border-transparent'
-                  : 'border border-gray-200'
+                  ? (billing === 'annual'
+                      ? 'border-orange-300 ring-2 ring-orange-200'
+                      : 'border-orange-200')
+                  : (billing === 'monthly' && plan.id === 'starter' ? 'border-orange-200' : 'border-gray-200')
               }`}
             >
               {plan.id === 'growth' && (
