@@ -90,7 +90,7 @@ export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) 
         </div>
 
         {/* Pricing Cards - 3 Plans */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
           {plans.map((plan) => (
             <Card
               key={plan.id}
@@ -128,35 +128,19 @@ export function MultiLocationPricing({ onGetQuote }: MultiLocationPricingProps) 
             </CardContent>
           </Card>
           ))}
+        </div>
 
-          {/* Custom pricing card (replaces previous Pro) */}
-          <Card className="relative transition-all hover:shadow-xl border border-gray-200">
-            <CardHeader className="text-center pb-2">
-              <CardTitle className="text-2xl font-bold text-gray-900">Custom</CardTitle>
-              <div className="mt-2 mb-1">
-                <span className="text-4xl font-extrabold text-orange-600">$190</span>
-                <span className="text-gray-600 ml-2">per year</span>
-              </div>
-              <p className="text-sm text-gray-500">Annual Plan • Onboarding & Training</p>
-            </CardHeader>
-
-            <CardContent>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-center text-gray-700"><Check className="w-5 h-5 text-green-500 mr-2" /> Priority Support</li>
-                <li className="flex items-center text-gray-700"><Check className="w-5 h-5 text-green-500 mr-2" /> White-glove Onboarding</li>
-                <li className="flex items-center text-gray-700"><Check className="w-5 h-5 text-green-500 mr-2" /> Staff Training</li>
-                <li className="flex items-center text-gray-700"><Check className="w-5 h-5 text-green-500 mr-2" /> All Starter Features</li>
-                <li className="flex items-center text-gray-700"><Check className="w-5 h-5 text-green-500 mr-2" /> All Growth Features</li>
-              </ul>
-
-              <Button
-                onClick={() => setShowCustomPricing(true)}
-                className="w-full bg-orange-600 hover:bg-orange-700 text-white"
-              >
-                Get Custom Quote
-              </Button>
-            </CardContent>
-          </Card>
+        {/* Custom Quote Question */}
+        <div className="text-center mt-8">
+          <p className="text-base text-gray-600">
+            Have multiple locations or need help choosing a plan?{' '}
+            <button
+              onClick={() => setShowCustomPricing(true)}
+              className="text-orange-600 underline hover:text-orange-700 font-medium"
+            >
+              Try our custom pricing
+            </button>
+          </p>
         </div>
 
         {/* All Features Included note */}
